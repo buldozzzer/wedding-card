@@ -137,7 +137,7 @@
       </div>
       <div>
         <p>Подтвердите свое присутствие</p>
-				<form class="form">
+				<form class="form" onsubmit="return false">
 					<label class="rad-label">
 						<input type="radio" class="rad-input" name="rad">
 						<div class="rad-design"></div>
@@ -184,6 +184,8 @@
 <script>
 import Swiper from '@/utils/swiper';
 import jsCalendar from '../utils/jsCalendar';
+
+const { GoogleSpreadsheet } = require('google-spreadsheet');
 
 export default {
 	name: 'main-page',
@@ -266,6 +268,11 @@ export default {
     });
 
     observer.observe(box);
-	}
+	},
+  methods: {
+    async accessSpreadSheet(){
+      const doc = new GoogleSpreadsheet('128JRm4srOrSIERoYzrE1a0L4EBoCyDpssprbh9ESgaM');
+    }
+  }
 }
 </script>
