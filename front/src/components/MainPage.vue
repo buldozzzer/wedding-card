@@ -297,7 +297,10 @@ export default {
         dialog.classList.add('error');
       }
       else {
-        console.log({guets: this.guest, status: this.check_status})
+        console.log({guets: this.guest, status: this.check_status});
+        const response = await fetch(url, {
+          method: "POST"
+        });
       }
     }
   }
