@@ -148,7 +148,7 @@
 						<div class="rad-design"></div>
 						<div class="rad-text">Я не приду</div>
 					</label>
-					<button class="vutton" type="submit">Подтвердить</button>
+					<button class="button" @click="confirm">Подтвердить</button>
 				</form>
       </div>
       <div class="greating">
@@ -184,8 +184,7 @@
 <script>
 import Swiper from '@/utils/swiper';
 import jsCalendar from '../utils/jsCalendar';
-
-const { GoogleSpreadsheet } = require('google-spreadsheet');
+import {GoogleSpreadsheet} from 'google-spreadsheet';
 
 export default {
 	name: 'main-page',
@@ -270,8 +269,9 @@ export default {
     observer.observe(box);
 	},
   methods: {
-    async accessSpreadSheet(){
+    async confirm(){
       const doc = new GoogleSpreadsheet('128JRm4srOrSIERoYzrE1a0L4EBoCyDpssprbh9ESgaM');
+      console.log(doc);
     }
   }
 }
