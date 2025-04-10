@@ -297,9 +297,15 @@ export default {
         dialog.classList.add('error');
       }
       else {
-        console.log({guets: this.guest, status: this.check_status});
-        const response = await fetch(url, {
-          method: "POST"
+        const data = {guets: this.guest, status: this.check_status}
+        console.log(data);
+        console.log(import.meta.env.VITE_API_URL);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}`, {
+          method: "POST",
+          headers: {
+          "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data)
         });
       }
     }
