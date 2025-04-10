@@ -64,9 +64,9 @@ body {
 
 .swiper-slide {
     background-color: rgba(255, 255, 255, 0.6);
-    min-width: 350px;
-    max-width: 370px;
-    max-height: 717px;
+    width: 95%;
+    max-width: 380px;
+    max-height: 80vh;
     height: 100%;
     justify-items: center;
     border-radius: 2em;
@@ -330,15 +330,62 @@ button {
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
+
+button:hover {
+  background-color: #004e0d;
+}
+
 .popup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  height: 200px;
-  background-color: #fff;
-  border: 1px solid #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.popup-content {
+  background-color: rgb(253, 235, 235);
+  padding: 10%;
+  border-radius: 1em;
+  width: 70%;
+  position: relative;
+  animation: zoom-in-zoom-out 0.5s ease;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    scale: 100%;
+  }
+  50% {
+    scale: 130%;
+  }
+  100% {
+    scale: 100%;
+  }
+}
+
+.popup.error .popup-content {
+  transition: all 0.3s ease-in-out; 
+  transform: scale(1);
+}
+.popup.error {
+  display: flex;
   opacity: 1;
-  z-index: 9999;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+.close-btn:hover {
+  color: #333;
 }
