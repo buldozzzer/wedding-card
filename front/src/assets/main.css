@@ -79,7 +79,7 @@ body::before {
     max-width: 380px;
     max-height: 78vh;
     height: 100%;
-    min-height: 620px;
+    min-height: 615px;
     min-width: 340px;
     justify-items: center;
     border-radius: 2em;
