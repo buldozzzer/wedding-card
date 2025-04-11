@@ -204,8 +204,9 @@ export default {
       errors: [],
 		};
 	},
+
 	mounted(){
-    screen.lockOrientation("landscape");
+    this.lockOrientation();
     
 		jsCalendar.new("#calendar", "22/08/2025", {
 			"navigator": "false",
@@ -311,6 +312,18 @@ export default {
           },
           body: JSON.stringify(data)
         });
+      }
+    },
+
+    async lockOrientation() {
+      try {
+        if (screen.orientation && screen.orientation.lock) {
+          await screen.orientation.lock('portrait'); // или 'landscape'
+        } else if (window.screen.lockOrientation) {
+          window.screen.lockOrientation('portrait');
+        }
+      } catch (err) {
+        console.error('Ошибка при блокировке ориентации:', err);
       }
     }
   }
