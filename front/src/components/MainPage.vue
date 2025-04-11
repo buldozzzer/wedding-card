@@ -205,6 +205,8 @@ export default {
 		};
 	},
 	mounted(){
+    screen.lockOrientation("landscape");
+    
 		jsCalendar.new("#calendar", "22/08/2025", {
 			"navigator": "false",
 			"monthFormat": "month YYYY",
