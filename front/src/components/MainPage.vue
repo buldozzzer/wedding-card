@@ -2,181 +2,191 @@
 <div>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide slide">
-        <div class="greating">
-          Свадьба
-        </div>
-        <div class="we">
-          <img class="main_photo" src="../assets/we.jpg" alt="we" id="we">
-        </div>
-        <div class="greating">
-          {{ guest }}
-        </div>
-        <div class="greating-transparent about">
-          <p>В этот особенный день мы хотим оказатсья в окружении самых любимых и дорогих нас людей...</p>
-        </div>
-        <div class="greating-transparent">
-          <p>Приглашаем разделить с нами этот праздник!</p>
-        </div>
-      </div>
-      <div class="swiper-slide slide">
-        <div class="greating">
-          Дата свадьбы
-        </div>
-        <div class="calendar-wrapper">
-          <div id="calendar" class="green"></div>
-        </div>
-        <div class="about-us">
-          22 августа 2025
-        </div>
-        <div class="timing">
+      <div class="swiper-slide">
+        <div class="slide">
           <div class="greating">
-            Тайминг мероприятия
+            Свадьба
           </div>
-        </div>
-        <div class="timing-wrapper">
-          <div class="left">
-            14:00—15:00
+          <div class="we">
+            <img class="main_photo" src="../assets/we.jpg" alt="we" id="we">
           </div>
-          <div class="right">
-            Сбор гостей и фуршет
+          <div class="greating">
+            {{ guest }}
           </div>
-          <div class="left">
-            15:00—15:30
+          <div class="greating-transparent about">
+            <p>В этот особенный день мы хотим оказатсья в окружении самых любимых и дорогих нас людей...</p>
           </div>
-          <div class="right">
-            Встреча молодожёнов
-          </div>
-          <div class="left">
-            15:30—∞
-          </div>
-          <div class="right">
-            Банкет и праздничная программа
+          <div class="greating-transparent">
+            <p>Приглашаем разделить с нами этот праздник!</p>
           </div>
         </div>
       </div>
-      <div class="swiper-slide slide">
-        <div class="greating">
-          Локация мероприятия
-        </div>
-        <div class="we location-item">
-          <div class="flipper">
-            <div class="front">
-              <img class="main_photo" src="../assets/gosudar.jpg" alt="Дом торжеств Государь" id="we">
-            </div>
-            <div class="back">
-              <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae1115d64ab2ff8050213da8303a0e636ebc5e798c546183437486bcb77491671&amp;source=constructor" width="100%" height="auto" frameborder="0"></iframe>
-            </div>
+      <div class="swiper-slide">
+        <div class="slide">
+          <div class="greating">
+            Дата свадьбы
           </div>
-        </div>
-        <div class="location">
-          Дом торжеств «Государь»
-          <br>г. Москва, Лобненская ул., 11
-        </div>
-        <div class="secret">
+          <div class="calendar-wrapper">
+            <div id="calendar" class="green"></div>
+          </div>
           <div class="about-us">
-            Кодовое слово на въезде:
+            22 августа 2025
+          </div>
+          <div class="timing">
+            <div class="greating">
+              Тайминг мероприятия
+            </div>
+          </div>
+          <div class="timing-wrapper">
+            <div class="left">
+              14:00—15:00
+            </div>
+            <div class="right">
+              Сбор гостей и фуршет
+            </div>
+            <div class="left">
+              15:00—15:30
+            </div>
+            <div class="right">
+              Встреча молодожёнов
+            </div>
+            <div class="left">
+              15:30—∞
+            </div>
+            <div class="right">
+              Банкет и праздничная программа
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide">
+          <div class="greating">
+            Локация мероприятия
+          </div>
+          <div class="we location-item">
+            <div class="flipper">
+              <div class="front">
+                <img class="main_photo" src="../assets/gosudar.jpg" alt="Дом торжеств Государь" id="we">
+              </div>
+              <div class="back">
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae1115d64ab2ff8050213da8303a0e636ebc5e798c546183437486bcb77491671&amp;source=constructor" width="100%" height="auto" frameborder="0"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="location">
+            Дом торжеств «Государь»
+            <br>г. Москва, Лобненская ул., 11
+          </div>
+          <div class="secret">
+            <div class="about-us">
+              Кодовое слово на въезде:
+            </div>
+            <div class="greating">
+              ЧИЗКЕЙК
+            </div>
+          </div>
+          <div class="aligner">
+            <div class="remark">
+              *На территории Дома торжеств
+              <br>«Государь» имеется
+              <br>бесплатная парковка
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide">
+          <div class="greating">
+            Дресс-код и детали мероприятия
+          </div>
+          <div class="wishes">
+            <div class="wish">
+              <div class="child">
+                <p>ЛЮБОЙ цвет одежды</p>
+              </div>
+            </div>
+            <div class="wish icon">
+              <p><img src="../assets/good.svg" alt="хорошо"></p>
+            </div>
+            <div class="wish">
+              <div class="child">
+                <p>Официально-деловой или праздничный стиль</p>
+              </div>
+            </div>
+            <div class="wish icon">
+              <p>
+                <img src="../assets/good.svg" alt="хорошо">
+              </p>
+            </div>
+            <div class="wish">
+              <div class="child">
+                <p>Не приветствуются: джинсы, шорты,
+                  <br>поло, футболки, майки, спортивная одежда</p>
+              </div>
+            </div>
+            <div class="wish icon">
+              <p><img src="../assets/not_good.svg" alt="плохо"></p>
+            </div>
+            <div class="wish">
+              <div class="child">
+                <p>Вместо цветов будем рады видеть бутылку любого хорошего алкоголя</p>
+              </div>
+            </div>
+            <div class="wish icon">
+              <p><img src="../assets/good.svg" alt="хорошо"></p>
+            </div>
+          </div>
+          <div class="angel">
+            <img src="../assets/angel_without_bg.svg" alt="wedding_logo">
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide">
+          <div class="greating">
+            Анекта гостя
+          </div>
+          <div class="guest-form">
+            <p>Подтвердите свое присутствие</p>
+            <form class="form" onsubmit="return false">
+              <label class="rad-label">
+                <input type="radio" class="rad-input" name="rad" value="Да" v-model="check_status">
+                <div class="rad-design"></div>
+                <div class="rad-text">Я приду</div>
+              </label>
+              <label class="rad-label">
+                <input type="radio" class="rad-input" name="rad" value="Нет" v-model="check_status">
+                <div class="rad-design"></div>
+                <div class="rad-text">Я не приду</div>
+              </label>
+              <button class="button" @click="confirm">Подтвердить</button>
+            </form>
           </div>
           <div class="greating">
-            ЧИЗКЕЙК
+            Контакты
           </div>
-        </div>
-        <div class="aligner">
-          <div class="remark">
-            *На территории Дома торжеств
-            <br>«Государь» имеется
-            <br>бесплатная парковка
+          <div class="greating-transparent">
+            <p>По всем вопросам вы можете обратиться:
+              <br>
+              <b>+7 (925) 471-01-84</b> жених Иван
+              <br>
+              <b>+7 (964) 520-04-99</b> невеста Дарья</p>
           </div>
-        </div>
-      </div>
-      <div class="swiper-slide slide">
-        <div class="greating">
-          Дресс-код и детали мероприятия
-        </div>
-        <div class="wishes">
-          <div class="wish">
-            <div class="child">
-              <p>ЛЮБОЙ цвет одежды</p>
+          <div class="final">
+            <p>Мы вас ждём!</p>
+          </div>
+          <div class="timer-wrapper">
+            <p>До начала мероприятия осталось</p>
+            <div class="timer">
+              <div class="timer-item timer-days">00</div>
+              <div class="separator">:</div>
+              <div class="timer-item timer-hours">00</div>
+              <div class="separator">:</div>
+              <div class="timer-item timer-minutes">00</div>
+              <div class="separator">:</div>
+              <div class="timer-item timer-seconds">00</div>
             </div>
-          </div>
-          <div class="wish icon">
-            <p><img src="../assets/good.svg" alt="хорошо"></p>
-          </div>
-          <div class="wish">
-            <div class="child">
-              <p>Официально-деловой или праздничный стиль</p>
-            </div>
-          </div>
-          <div class="wish icon">
-            <p>
-              <img src="../assets/good.svg" alt="хорошо">
-            </p>
-          </div>
-          <div class="wish">
-            <div class="child">
-              <p>Не приветствуются: джинсы, шорты,
-                <br>поло, футболки, майки, спортивная одежда</p>
-            </div>
-          </div>
-          <div class="wish icon">
-            <p><img src="../assets/not_good.svg" alt="плохо"></p>
-          </div>
-          <div class="wish">
-            <div class="child">
-              <p>Вместо цветов будем рады видеть бутылку любого хорошего алкоголя</p>
-            </div>
-          </div>
-          <div class="wish icon">
-            <p><img src="../assets/good.svg" alt="хорошо"></p>
-          </div>
-        </div>
-        <div class="angel">
-          <img src="../assets/angel_without_bg.svg" alt="wedding_logo">
-        </div>
-      </div>
-      <div class="swiper-slide slide">
-        <div class="greating">
-          Анекта гостя
-        </div>
-        <div class="guest-form">
-          <p>Подтвердите свое присутствие</p>
-          <form class="form" onsubmit="return false">
-            <label class="rad-label">
-              <input type="radio" class="rad-input" name="rad" value="Да" v-model="check_status">
-              <div class="rad-design"></div>
-              <div class="rad-text">Я приду</div>
-            </label>
-            <label class="rad-label">
-              <input type="radio" class="rad-input" name="rad" value="Нет" v-model="check_status">
-              <div class="rad-design"></div>
-              <div class="rad-text">Я не приду</div>
-            </label>
-            <button class="button" @click="confirm">Подтвердить</button>
-          </form>
-        </div>
-        <div class="greating">
-          Контакты
-        </div>
-        <div class="greating-transparent">
-          <p>По всем вопросам вы можете обратиться:
-            <br>
-            <b>+7 (925) 471-01-84</b> жених Иван
-            <br>
-            <b>+7 (964) 520-04-99</b> невеста Дарья</p>
-        </div>
-        <div class="final">
-          <p>Мы вас ждём!</p>
-        </div>
-        <div class="timer-wrapper">
-          <p>До начала мероприятия осталось</p>
-          <div class="timer">
-            <div class="timer-item timer-days">00</div>
-            <div class="separator">:</div>
-            <div class="timer-item timer-hours">00</div>
-            <div class="separator">:</div>
-            <div class="timer-item timer-minutes">00</div>
-            <div class="separator">:</div>
-            <div class="timer-item timer-seconds">00</div>
           </div>
         </div>
       </div>
