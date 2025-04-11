@@ -92,6 +92,7 @@ body::before {
     width: 25%;
     margin-left:auto;
     margin-right:auto;
+    margin-top: -1em;
 }
 
 .location {
