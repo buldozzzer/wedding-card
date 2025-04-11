@@ -38,8 +38,21 @@
             </div>
           </div>
           <div class="timing-wrapper">
-            
-            <!-- <div class="left">
+            <!-- <div class="timeline">
+              <div class="event">
+                <div class="time">14:00—15:00</div>
+                <div class="title">Сбор гостей и фуршет</div>
+              </div>
+              <div class="event">
+                <div class="time">15:00—15:30</div>
+                <div class="title">Встреча молодожёнов</div>
+              </div>
+              <div class="event">
+                <div class="time">15:30—∞</div>
+                <div class="title">Банкет и праздничная программа</div>
+              </div>
+            </div> -->
+            <div class="left">
               14:00—15:00
             </div>
             <div class="right">
@@ -56,7 +69,7 @@
             </div>
             <div class="right">
               Банкет и праздничная программа
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -304,6 +317,23 @@ export default {
             popupOverlay.classList.remove('error');
         }
     });
+
+    const timeline = document.querySelectorAll('.event');
+    var timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('tl-anim');
+            } else {
+                entry.target.classList.remove('tl-anim');
+            }
+        });
+    }, {
+        threshold: 1, // Ensure the entire element is in view
+    });
+    timeline.forEach(element => {
+      timelineObserver.observe(element)
+    });
+
 	},
   beforeUnmount() {
     window.removeEventListener('resize', this.updateHeight);
