@@ -127,7 +127,7 @@ body::before {
     width: 80%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 2em;
+    margin-top: min(2em, 20px);
     margin-left: auto;
     margin-right: auto;
 }
@@ -232,6 +232,7 @@ body::before {
 
 .timer-wrapper {
     width: 90%;
+    margin-top: 3em;
     margin-left:auto;
     margin-right:auto;
     display: block;
