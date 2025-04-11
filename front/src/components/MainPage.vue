@@ -12,7 +12,7 @@
         <div class="greating">
           {{ guest }}
         </div>
-        <div class="greating-transparent">
+        <div class="greating-transparent about">
           <p>В этот особенный день мы хотим оказатсья в окружении самых любимых и дорогих нас людей...</p>
         </div>
         <div class="greating-transparent">

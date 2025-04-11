@@ -201,6 +201,10 @@ body::before {
     font-size: 16px;
 }
 
+.greating-transparent.about{
+  margin-top: -0.5em;
+}
+
 .we {
     margin-left:auto;
     margin-right:auto;
