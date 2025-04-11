@@ -1,5 +1,5 @@
 body {
-    background: no-repeat center url("./background.jpg");
+    background: no-repeat center url("./boho.jpg");
     background-size: cover;
     background-attachment: fixed;
     height: 100%;
@@ -12,6 +12,17 @@ body {
     font-family: 'MainFont';
     overflow-y: hidden;
     padding-top: 1em;
+}
+
+body::before {
+  background: no-repeat center url("./boho.jpg");
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
 }
 
 .main_photo {
