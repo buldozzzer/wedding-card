@@ -130,7 +130,9 @@
             <p><img src="../assets/good.svg" alt="хорошо"></p>
           </div>
         </div>
-        <img src="../assets/angel_without_bg.svg" alt="we" id="we">
+        <div class="angel">
+          <img src="../assets/angel_without_bg.svg" alt="wedding_logo">
+        </div>
       </div>
       <div class="swiper-slide slide">
         <div class="greating">

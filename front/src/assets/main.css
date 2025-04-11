@@ -90,6 +90,8 @@ body::before {
 
 .angel {
     width: 25%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .location {
@@ -205,6 +207,8 @@ body::before {
 
 .wishes {
     width: 80%;
+    margin-left:auto;
+    margin-right:auto;
     display: grid;
     grid-template-columns: 60% auto;
     margin-top: 1em;
