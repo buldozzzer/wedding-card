@@ -220,9 +220,6 @@ export default {
         loop: false,
         spaceBetween: 35,
         slidesPerView: 1,
-        // mousewheel: {
-        //   releaseOnEdges: true,
-        // },
       });
 			const deadline = new Date('2025-08-22T14:00:00');
     
