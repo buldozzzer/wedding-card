@@ -228,7 +228,7 @@ export default {
         autoHeight: true,
         direction: 'vertical',
         loop: false,
-        spaceBetween: 30,
+        spaceBetween: 0,
         slidesPerView: 1,
       });
 			const deadline = new Date('2025-08-22T14:00:00');
