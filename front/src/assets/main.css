@@ -236,6 +236,13 @@ body::before {
     margin: auto;
 }
 
+.guest-form {
+  width: 80%;
+  margin-left:auto;
+  margin-right:auto;
+  align-items:start;
+}
+
 .timer-wrapper {
     width: 90%;
     margin-top: 3em;

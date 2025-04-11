@@ -138,7 +138,7 @@
         <div class="greating">
           Анекта гостя
         </div>
-        <div>
+        <div class="guest-form">
           <p>Подтвердите свое присутствие</p>
           <form class="form" onsubmit="return false">
             <label class="rad-label">
@@ -207,7 +207,7 @@ export default {
 
 	mounted(){
     this.lockOrientation();
-    
+
 		jsCalendar.new("#calendar", "22/08/2025", {
 			"navigator": "false",
 			"monthFormat": "month YYYY",
