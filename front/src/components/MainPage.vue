@@ -218,7 +218,7 @@ export default {
         autoHeight: true,
         direction: 'vertical',
         loop: false,
-        spaceBetween: 30,
+        spaceBetween: 35,
         slidesPerView: 1,
         // mousewheel: {
         //   releaseOnEdges: true,
