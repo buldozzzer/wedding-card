@@ -3,11 +3,8 @@ body {
     background-size: cover;
     background-attachment: fixed;
     height: 100%;
-    padding-left: min(7em, 2%);
-    padding-right: min(7em, 2%);
     text-align: center;
     min-width: 80%;
-    padding-bottom: 1em;
     font-family: 'MainFont';
     overflow-y: hidden;
 }
@@ -74,12 +71,10 @@ body::before {
 
 .swiper-slide {
     width: 100%;
-    max-height: 100vh;
     height: 100%;
     min-height: 610px;
     min-width: 340px;
     justify-items: center;
-    padding: 0.4em;
     text-align: center;
     text-align-last: center;
 }
