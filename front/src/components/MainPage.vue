@@ -38,7 +38,8 @@
             </div>
           </div>
           <div class="timing-wrapper">
-            <div class="left">
+            
+            <!-- <div class="left">
               14:00—15:00
             </div>
             <div class="right">
@@ -55,7 +56,7 @@
             </div>
             <div class="right">
               Банкет и праздничная программа
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

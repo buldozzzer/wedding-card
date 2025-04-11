@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тайминг свадебного мероприятия</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #f8f9fb 100%);
+            color: #333;
+            margin: 0;
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            color: #5a4a42;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        h1:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #e8cbc0 0%, #c9a798 50%, #e8cbc0 100%);
+            border-radius: 3px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 3px;
+            background: linear-gradient(to bottom, #e8cbc0, #c9a798, #e8cbc0);
+            border-radius: 3px;
+        }
+
+        .event {
+            position: relative;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: fadeIn 0.6s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .event:nth-child(1) { animation-delay: 0.2s; }
+        .event:nth-child(2) { animation-delay: 0.4s; }
+        .event:nth-child(3) { animation-delay: 0.6s; }
+        .event:nth-child(4) { animation-delay: 0.8s; }
+        .event:nth-child(5) { animation-delay: 1.0s; }
+        .event:nth-child(6) { animation-delay: 1.2s; }
+
+        .event:before {
+            content: "";
+            position: absolute;
+            left: -50px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #c9a798;
+            border: 4px solid #e8cbc0;
+            box-sizing: border-box;
+        }
+
+        .time {
+            font-weight: 500;
+            color: #5a4a42;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #3a2e28;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: #666;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .event:hover:before {
+            transform: scale(1.2);
+            background: #b38b7a;
+            transition: all 0.3s ease;
+        }
+
+        .event:hover .title {
+            color: #8b6b5e;
+            transition: color 0.3s ease;
+        }
+
+        .decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .decoration-1 {
+            top: 50px;
+            right: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23c9a798" d="M50 0 L100 50 L50 100 L0 50 Z"/></svg>');
+            background-size: contain;
+        }
+
+        .decoration-2 {
+            bottom: 50px;
+            left: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle fill="%23c9a798" cx="50" cy="50" r="50"/></svg>');
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Тайминг свадебного дня</h1>
+
+        <div class="decoration decoration-1"></div>
+        <div class="decoration decoration-2"></div>
+
+        <div class="timeline">
+            <div class="event">
+                <div class="time">14:00 - 15:00</div>
+                <div class="title">Сбор гостей</div>
+                <div class="description">Гости прибывают в место проведения церемонии. Фуршет с легкими закусками и напитками.</div>
+            </div>
+
+            <div class="event">
+                <div class="time">15:00 - 15:30</div>
+                <div class="title">Церемония бракосочетания</div>
+                <div class="description">Торжественная церемония с обменом клятвами и кольцами. Фотосессия молодоженов.</div>
+            </div>
+
+            <div class="event">
+                <div class="time">15:30 - 16:30</div>
+                <div class="title">Поздравления и фотосессия</div>
+                <div class="description">Гости поздравляют молодоженов. Групповая и семейная фотосессия с профессиональным фотографом.</div>
+            </div>
+
+            <div class="event">
+                <div class="time">17:00 - 18:00</div>
+                <div class="title">Трансфер в банкетный зал</div>
+                <div class="description">Переезд на банкет в стилизованном транспорте. В это время в зале завершаются последние приготовления.</div>
+            </div>
+
+            <div class="event">
+                <div class="time">18:00 - 00:00</div>
+                <div class="title">Банкет</div>
+                <div class="description">
+                    <p>18:00 - 19:00: Встреча молодоженов, первый танец, посадка за столы.</p>
+                    <p>19:00 - 20:30: Подача основных блюд, тосты и поздравления.</p>
+                    <p>20:30 - 22:00: Развлекательная программа, конкурсы.</p>
+                    <p>22:00 - 00:00: Танцы, торт, завершение вечера.</p>
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="time">00:00</div>
+                <div class="title">Завершение праздника</div>
+                <div class="description">Торжественный провод молодоженов. Организованный развоз гостей по домам.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
