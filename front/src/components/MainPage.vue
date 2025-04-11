@@ -217,6 +217,9 @@ export default {
 
 	mounted(){
     this.lockOrientation();
+    
+    this.updateHeight();
+    window.addEventListener('resize', this.updateHeight);
 
 		jsCalendar.new("#calendar", "22/08/2025", {
 			"navigator": "false",
@@ -301,6 +304,10 @@ export default {
         }
     });
 	},
+  beforeUnmount() {
+    window.removeEventListener('resize', this.updateHeight);
+  },
+
   methods: {
     async confirm(){
       if (!this.check_status) {
@@ -324,15 +331,19 @@ export default {
 
     async lockOrientation() {
       try {
-        if (screen.orientation && screen.orientation.lock) {
-          await screen.orientation.lock('portrait'); // или 'landscape'
-        } else if (window.screen.lockOrientation) {
-          window.screen.lockOrientation('portrait');
-        }
+        window.screen.lockOrientation('portrait');
       } catch (err) {
         console.error('Ошибка при блокировке ориентации:', err);
       }
-    }
+    },
+    updateHeight() {
+      var swiperContainer = document.querySelector('.swiper-container');
+      if (swiperContainer) {
+        swiperContainer.style.height = `${window.innerHeight}px`;
+        console.log(window.innerHeight);
+        console.log(swiperContainer.style.height);
+      }
+    },
   }
 }
 </script>
