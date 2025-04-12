@@ -159,7 +159,7 @@
       <div class="swiper-slide">
         <div class="slide">
           <div class="greating">
-            Анекта гостя
+            Анкета гостя
           </div>
           <div class="guest-form">
             <p>Подтвердите свое присутствие</p>
