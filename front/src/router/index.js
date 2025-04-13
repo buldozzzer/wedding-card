@@ -51,7 +51,12 @@ const router = createRouter({
     },
     {
       path: '/buduschie-roditeli',
-      name: 'dorogaya-anya',
+      name: 'artyom-and-masha',
+      component: () => import('../views/ArtyomAndMariaView.vue')
+    },
+    {
+      path: '/radik-and-anna',
+      name: 'radik-and-anna',
       component: () => import('../views/ArtyomAndMariaView.vue')
     },
   ],
