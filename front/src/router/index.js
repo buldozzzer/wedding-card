@@ -24,6 +24,11 @@ const router = createRouter({
       name: 'alexander-and-natalya',
       component: () => import('../views/AlexandrAndNatalya.vue')
     },
+    {
+      path: '/vitaliy-and-sofia',
+      name: 'vitaliy-and-sofia',
+      component: () => import('../views/VitaliyAndSofiaView.vue')
+    },
   ],
 })
 

@@ -1,4 +1,5 @@
 <template>
+    
     <MainPageVue guest="Дорогие Виталий и Софья"></MainPageVue>
   </template>
   
