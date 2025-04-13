@@ -36,21 +36,6 @@ def get_all_guests():
             guest["s"] = False
     return render_template('index.html', guests=guest_data)
 
-# @app.route("/api/guests", methods=["POST"])
-# def post():
-#     data  = request.json["guest"]
-#     if data is None:
-#         return jsonify({"error": "Invalid content type or empty payload"}), 400
-#     else:
-#         guest = data.get("guest")
-#         status = data.get("status")
-#         try:
-#             new_guest = Guest(name=guest, status=status)
-#             db.session.add(new_guest)
-#             db.session.commit()
-#         except Exception as ex:
-#             return make_response(jsonify({"error": ex}), 400)
-#     return make_response(jsonify(data), 201)
 
 class Guests(Resource):
 
@@ -60,13 +45,20 @@ class Guests(Resource):
             return jsonify({"error": "Invalid content type or empty payload"}), 400
         else:
             json_data = json.loads(data)
-            print(json_data)
-            # try:
-            new_guest = Guest(name=json_data["guests"], status=json_data["status"])
-            db.session.add(new_guest)
-            db.session.commit()
-            # except Exception as ex:
-            #     return {"error": f"{ex}"}
+            
+            with open("guests.txt", "a") as guests_file:
+                guests_file.write(f"{json_data['guests']}\t{json_data['status']}")
+
+            guest = Guest.query.filter(Guest.name == json_data["guests"]).first()
+
+            if guest is not None:
+                guest.status = json_data["status"]
+                db.session.commit()
+                return data
+            else:
+                new_guest = Guest(name=json_data["guests"], status=json_data["status"])
+                db.session.add(new_guest)
+                db.session.commit()
         return data
 
 

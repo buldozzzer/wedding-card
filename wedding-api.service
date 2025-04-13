@@ -1,0 +1,11 @@
+[Unit]
+Description=АПИ для гостей на свадьбу
+
+[Service]
+User=root
+WorkingDirectory=/root/wedding-card/back
+ExecStart=uwsgi --http :5000 --module main:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
