@@ -5,7 +5,7 @@
       <div class="swiper-slide">
         <div class="slide">
           <div class="greating">
-            Свадьба
+            Приглашение на свадьбу
           </div>
           <div class="we">
             <img class="main_photo" src="../assets/we.jpg" alt="we" id="we">
@@ -14,9 +14,9 @@
             {{ guest }}
           </div>
           <div class="greating-transparent about">
-            <p>В этот особенный день мы хотим оказатсья в окружении самых любимых и дорогих нас людей...</p>
+            <p>В этот особенный день мы хотим оказатсья в окружении самых близких и дорогих нам людей...</p>
           </div>
-          <div class="greating-transparent">
+          <div class="greating-transparent about">
             <p>Приглашаем разделить с нами этот праздник!</p>
           </div>
         </div>
@@ -206,10 +206,16 @@
       </div>
     </div>
   </div>
-  <div class="popup" @open="errors.length" id="popupOverlay">
-      <div class="popup-content">
+  <div class="error-popup" @open="errors.length" id="popupOverlay">
+      <div class="success-popup-content">
         <span class="close-btn" id="closePopup">&times;</span>
         <p>{{ errors[0] }}</p>
+      </div>
+  </div>
+  <div class="success-popup" @open="success" id="successPopupOverlay">
+      <div class="success-popup-content">
+        <span class="close-btn" id="closePopup">&times;</span>
+        <p>Данные успешно отправлены. Спасибо)</p>
       </div>
   </div>
 </div>
@@ -226,6 +232,7 @@ export default {
 		return {
 			check_status: '',
       errors: [],
+      success: false,
 		};
 	},
 
