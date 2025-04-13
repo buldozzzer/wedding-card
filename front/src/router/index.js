@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: '/katya-and-nastya',
       name: 'katya-nastya',
-      component: () => import('../views/KatyaAndNastyaVirew.vue'),
+      component: () => import('../views/KatyaAndNastyaView.vue'),
     },
     {
       path: '/valeriy-and-irina',
@@ -33,6 +33,11 @@ const router = createRouter({
       path: '/maxim-and-tatyana',
       name: 'maxim-and-tatyana',
       component: () => import('../views/MaximAndTatyanaView.vue')
+    },
+    {
+      path: '/vladislav-and-valentina',
+      name: 'vladislav-and-valentina',
+      component: () => import('../views/VladislavAndValentina.vue')
     },
   ],
 })
