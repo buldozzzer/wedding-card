@@ -38,7 +38,7 @@ body::before {
 }
 
 .active {
-    animation: flip 1s ease-in-out 2s forwards;
+    animation: flip 1s ease-in-out 1.5s forwards;
 }
 
 .front, .back {
@@ -96,7 +96,7 @@ body::before {
     height: auto;
     margin-left:auto;
     margin-right:auto;
-    margin-top: -1.5em;
+    margin-top: -2.5em;
 }
 
 .location {
