@@ -60,8 +60,8 @@ const router = createRouter({
       component: () => import('../views/RadikAndAnnaView.vue')
     },
     {
-      path: '/aleksey-and-natalia',
-      name: 'aleksey-and-natalia',
+      path: '/aleksey-and-natalya',
+      name: 'aleksey-and-natalya',
       component: () => import('../views/AlekseyAndNatalyaView.vue')
     },
     {
