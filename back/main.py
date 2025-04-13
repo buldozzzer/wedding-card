@@ -1,77 +1,78 @@
-from flask import Flask, request
-from flask_restful import Resource, Api, reqparse
+from flask import Flask, request, render_template, jsonify, make_response
+from flask_restful import Resource, Api
+from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import os.path
+import json
 
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
 
-SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
-SAMPLE_SPREADSHEET_ID = "128JRm4srOrSIERoYzrE1a0L4EBoCyDpssprbh9ESgaM"
-SAMPLE_RANGE_NAME = "Class Data!A2:E"
+app = Flask(__name__)
 
-# app = Flask(__name__)
-# api = Api(app)
-# CORS(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///guests.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# todos = {}
-# parser = reqparse.RequestParser()
+db = SQLAlchemy(app)
 
-# class GuetsData(Resource):
-#     def post(self):
-#         args = request.json
-#         print(args)
-#         return args, 201
+api = Api(app)
 
-# api.add_resource(GuetsData, '/')
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-# if __name__ == '__main__':
-#     app.run(debug=True, host="0.0.0.0")
+class Guest(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), unique=True, nullable=False)
+    status = db.Column(db.String(10), unique=True, nullable=False)
 
-def main():
-    creds = None
-  # The file token.json stores the user's access and refresh tokens, and is
-  # created automatically when the authorization flow completes for the first
-  # time.
-    if os.path.exists("./back/token.json"):
-        creds = Credentials.from_authorized_user_file("./back/token.json", SCOPES)
-  # If there are no (valid) credentials available, let the user log in.
-    if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
+    def __repr__(self):
+        return f'<Guest {self.name}>'
+
+@app.route('/api/guests_list')
+def get_all_guests():
+    guests = Guest.query.all()
+    guest_data = [{'name': guest.name, 'status': guest.status} for guest in guests]
+    for guest in guest_data:
+        if guest["status"] == "Да":
+            guest["s"] = True
         else:
-            flow = InstalledAppFlow.from_client_secrets_file(
-            "./back/credentials.json", SCOPES
-        )
-        creds = flow.run_local_server(port=0)
-    # Save the credentials for the next run
-    with open("./back/token.json", "w") as token:
-      token.write(creds.to_json())
-    try:
-        service = build("sheets", "v4", credentials=creds)
+            guest["s"] = False
+    return render_template('index.html', guests=guest_data)
 
-        # Call the Sheets API
-        sheet = service.spreadsheets()
-        result = (
-            sheet.values()
-            .get(spreadsheetId=SAMPLE_SPREADSHEET_ID, range=SAMPLE_RANGE_NAME)
-            .execute()
-        )
-        values = result.get("values", [])
+# @app.route("/api/guests", methods=["POST"])
+# def post():
+#     data  = request.json["guest"]
+#     if data is None:
+#         return jsonify({"error": "Invalid content type or empty payload"}), 400
+#     else:
+#         guest = data.get("guest")
+#         status = data.get("status")
+#         try:
+#             new_guest = Guest(name=guest, status=status)
+#             db.session.add(new_guest)
+#             db.session.commit()
+#         except Exception as ex:
+#             return make_response(jsonify({"error": ex}), 400)
+#     return make_response(jsonify(data), 201)
 
-        if not values:
-            print("No data found.")
-            return
+class Guests(Resource):
 
-        print("Name, Major:")
-        for row in values:
-            print(f"{row[0]}, {row[4]}")
-    except HttpError as err:
-        print(err)
+    def post(self):
+        data  = request.get_data(as_text=True)
+        if data is None:
+            return jsonify({"error": "Invalid content type or empty payload"}), 400
+        else:
+            json_data = json.loads(data)
+            print(json_data)
+            # try:
+            new_guest = Guest(name=json_data["guests"], status=json_data["status"])
+            db.session.add(new_guest)
+            db.session.commit()
+            # except Exception as ex:
+            #     return {"error": f"{ex}"}
+        return data
 
 
-if __name__ == "__main__":
-    main()
+api.add_resource(Guests, '/api/guests')
+
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True, host="0.0.0.0")

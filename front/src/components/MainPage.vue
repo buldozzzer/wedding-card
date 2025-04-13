@@ -242,7 +242,7 @@ export default {
 	},
 
 	mounted(){
-    this.lockOrientation();
+    // this.lockOrientation();
     
     this.updateHeight();
     window.addEventListener('resize', this.updateHeight);
@@ -372,18 +372,22 @@ export default {
         errorDialog.classList.add('error');
       }
       else {
-        const data = {guets: this.guest, status: this.check_status}
+        const data = {guests: this.guest, status: this.check_status}
         console.log(data);
         console.log(import.meta.env.VITE_API_URL);
         const errorDialog = document.querySelector('.success-popup');
         errorDialog.classList.add('success');
-        // const response = await fetch(`${import.meta.env.VITE_API_URL}`, {
-        //   method: "POST",
-        //   headers: {
-        //   "Content-Type": "application/json",
-        //   },
-        //   body: JSON.stringify(data)
-        // });
+        const response = await fetch(`${import.meta.env.VITE_API_URL}`, {
+          method: "POST",
+          mode: 'no-cors',
+          headers: {
+            // "Content-Type": "application/json",
+            // 'Accept': '*/*',
+            // "Origin": "https://vdwedding.com"
+          },
+          body: JSON.stringify(data)
+          // body: data
+        });
         const successDialog = document.querySelector('.success-popup');
         successDialog.classList.add('error');
       }
@@ -400,8 +404,8 @@ export default {
       var swiperContainer = document.querySelector('.swiper-container');
       if (swiperContainer) {
         swiperContainer.style.height = `${window.innerHeight}px`;
-        console.log(window.innerHeight);
-        console.log(swiperContainer.style.height);
+        // console.log(window.innerHeight);
+        // console.log(swiperContainer.style.height);
       }
     },
   }

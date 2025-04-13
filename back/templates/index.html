@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Гости на нашу свадьбу</title>
+    <style>
+        td 
+        {
+            height: 3em; 
+        }
+        td 
+        {
+            text-align: center; 
+            vertical-align: middle;
+        }
+    </style>
+  </head>
+  <body>
+    <table style="width: 100%">
+        <thead>
+            <tr style="background-color:rgb(121, 237, 225);">
+                <th style="width:50%">Гости</th> <th>Статус</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for guest in guests%}
+            {% if guest.s %}
+            <tr style="background-color: rgb(166, 254, 158);">
+                <td>{{guest.name}}</td>
+                <td>{{guest.status}}</td>
+            </tr>
+            {% else %}
+            <tr style="background-color: rgb(254, 179, 158);">
+                <td>{{guest.name}}</td>
+                <td>{{guest.status}}</td>
+            </tr>
+            {% endif %}
+            {%endfor%} 
+        </tbody>
+    </table>
+  </body>
+</html>
