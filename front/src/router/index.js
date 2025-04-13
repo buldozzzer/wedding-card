@@ -15,9 +15,14 @@ const router = createRouter({
       component: () => import('../views/KatyaAndNastyaVirew.vue'),
     },
     {
-      path: '/bryukhovy',
+      path: '/valeriy-and-irina',
       name: 'bryukhovy',
-      component: () => import('../views/BryukhovsView.vue')
+      component: () => import('../views/ValeriyAndIrina.vue')
+    },
+    {
+      path: '/alexander-and-natalya',
+      name: 'alexander-and-natalya',
+      component: () => import('../views/AlexandrAndNatalya.vue')
     },
   ],
 })
