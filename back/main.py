@@ -47,15 +47,22 @@ class Guests(Resource):
             json_data = json.loads(data)
 
             with open("guests.txt", "a") as guests_file:
-                guests_file.write(f"{json_data['guests']}\t{json_data['status']}")
+                guests_file.write(f"{json_data['guests']}\t{json_data['status']}\n\n")
 
-            guest = Guest.query.filter(Guest.name == json_data["guests"]).first()
+            try:
 
-            if guest is not None:
-                guest.status = json_data["status"]
-                db.session.commit()
-                return data
-            else:
+                guest = Guest.query.filter(Guest.name == json_data["guests"]).first()
+
+                if guest is not None:
+                    guest.status = json_data["status"]
+                    db.session.commit()
+                    return data
+                else:
+                    new_guest = Guest(name=json_data["guests"], status=json_data["status"])
+                    db.session.add(new_guest)
+                    db.session.commit()
+                    
+            except Exception as ex:
                 new_guest = Guest(name=json_data["guests"], status=json_data["status"])
                 db.session.add(new_guest)
                 db.session.commit()
