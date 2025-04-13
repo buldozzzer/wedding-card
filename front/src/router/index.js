@@ -22,7 +22,7 @@ const router = createRouter({
     {
       path: '/alexander-and-natalya',
       name: 'alexander-and-natalya',
-      component: () => import('../views/AlexandrAndNatalya.vue')
+      component: () => import('../views/AlexandrAndNatalyaView.vue')
     },
     {
       path: '/vitaliy-and-sofia',
@@ -38,6 +38,11 @@ const router = createRouter({
       path: '/vladislav-and-valentina',
       name: 'vladislav-and-valentina',
       component: () => import('../views/VladislavAndValentina.vue')
+    },
+    {
+      path: '/fedor-and-maria',
+      name: 'fedor-and-maria',
+      component: () => import('../views/FedorAndMariyaView.vue')
     },
   ],
 })
