@@ -244,15 +244,18 @@ body::before {
   align-items:start;
 }
 
+.timer-aligner {
+  /* margin-top: 3em; */
+  width: 90%;
+  margin-left: auto;
+  margin-right:auto;
+}
+
 .timer-wrapper {
     display: block;
 }
 
 .timer {
-    width: 90%;
-    /* margin-top: 3em; */
-    margin-left: auto;
-    margin-right:auto;
     display: grid;
     grid-template-columns: 4.5rem 0.5rem 4.5rem 0.5rem 4.5rem 0.5rem 4.5rem;
     font-size: 3rem;

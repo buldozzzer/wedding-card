@@ -193,16 +193,18 @@
           <div class="final">
             <p>Мы вас ждём!</p>
           </div>
-          <div class="timer-wrapper">
-            <p>До начала торжества осталось</p>
-            <div class="timer">
-              <div class="timer-item timer-days">00</div>
-              <div class="separator">:</div>
-              <div class="timer-item timer-hours">00</div>
-              <div class="separator">:</div>
-              <div class="timer-item timer-minutes">00</div>
-              <div class="separator">:</div>
-              <div class="timer-item timer-seconds">00</div>
+          <div class="timer-aligner">
+            <div class="timer-wrapper">
+              <p>До начала торжества осталось</p>
+              <div class="timer">
+                <div class="timer-item timer-days">00</div>
+                <div class="separator">:</div>
+                <div class="timer-item timer-hours">00</div>
+                <div class="separator">:</div>
+                <div class="timer-item timer-minutes">00</div>
+                <div class="separator">:</div>
+                <div class="timer-item timer-seconds">00</div>
+              </div>
             </div>
           </div>
         </div>
