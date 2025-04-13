@@ -82,7 +82,7 @@ const router = createRouter({
     {
       path: '/dorogoy-zhenya',
       name: 'dorogoy-zhenya',
-      component: () => import('../views/DimaView.vue')
+      component: () => import('../views/EvgeniyView.vue')
     },
     {
       path: '/dorogoy-dima',
@@ -93,6 +93,11 @@ const router = createRouter({
       path: '/dorogaya-natalya',
       name: 'dorogaya-natalya',
       component: () => import('../views/NatalyaSitnikovaView.vue')
+    },
+    {
+      path: '/aleksey-and-alla',
+      name: 'dorogaya-natalya',
+      component: () => import('../views/AlekseyAndAllaView.vue')
     },
   ],
 })
