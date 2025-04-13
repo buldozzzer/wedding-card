@@ -114,6 +114,11 @@ const router = createRouter({
       name: 'evgeniy-and-tatiana',
       component: () => import('../views/RomanenkoView.vue')
     },
+    {
+      path: '/kristof-and-julia',
+      name: 'kristof-and-julia',
+      component: () => import('../views/KristoffAndYulia.vue')
+    },
   ],
 })
 
