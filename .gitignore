@@ -32,3 +32,4 @@ coverage
 .vite
 __pycache__
 venv
+*.db
