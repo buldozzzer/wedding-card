@@ -20,7 +20,7 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 class Guest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=True, nullable=False)
-    status = db.Column(db.String(10), unique=True, nullable=False)
+    status = db.Column(db.String(10), nullable=False)
 
     def __repr__(self):
         return f'<Guest {self.name}>'
@@ -45,7 +45,7 @@ class Guests(Resource):
             return jsonify({"error": "Invalid content type or empty payload"}), 400
         else:
             json_data = json.loads(data)
-            
+
             with open("guests.txt", "a") as guests_file:
                 guests_file.write(f"{json_data['guests']}\t{json_data['status']}")
 
