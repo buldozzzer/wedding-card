@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: '/valeriy-and-irina',
       name: 'bryukhovy',
-      component: () => import('../views/ValeriyAndIrina.vue')
+      component: () => import('../views/ValeriyAndIrinaView.vue')
     },
     {
       path: '/alexander-and-natalya',
