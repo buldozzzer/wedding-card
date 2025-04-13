@@ -34,7 +34,7 @@
           </div>
           <div class="timing">
             <div class="greating">
-              Тайминг мероприятия
+              Тайминг торжества
             </div>
           </div>
           <div class="timing-wrapper">
@@ -76,7 +76,7 @@
       <div class="swiper-slide">
         <div class="slide">
           <div class="greating">
-            Локация мероприятия
+            Локация торжества
           </div>
           <div class="we location-item">
             <div class="flipper">
@@ -112,7 +112,7 @@
       <div class="swiper-slide">
         <div class="slide">
           <div class="greating">
-            Дресс-код и детали мероприятия
+            Дресс-код и детали торжества
           </div>
           <div class="wishes">
             <div class="wish">
@@ -177,6 +177,9 @@
               <button class="button" @click="confirm">Подтвердить</button>
             </form>
           </div>
+          <div class="greating-transparent">
+            Пожалуйста, уточните сведения<br><b>до 1 июня</b>
+          </div>
           <div class="greating">
             Контакты
           </div>
@@ -191,7 +194,7 @@
             <p>Мы вас ждём!</p>
           </div>
           <div class="timer-wrapper">
-            <p>До начала мероприятия осталось</p>
+            <p>До начала торжества осталось</p>
             <div class="timer">
               <div class="timer-item timer-days">00</div>
               <div class="separator">:</div>
@@ -206,16 +209,16 @@
       </div>
     </div>
   </div>
-  <div class="error-popup" @open="errors.length" id="popupOverlay">
-      <div class="success-popup-content">
-        <span class="close-btn" id="closePopup">&times;</span>
+  <div class="error-popup" @open="errors.length" id="errorPopupOverlay">
+      <div class="error-popup-content">
+        <span class="close-error-btn" id="closeErrorPopup">&times;</span>
         <p>{{ errors[0] }}</p>
       </div>
   </div>
   <div class="success-popup" @open="success" id="successPopupOverlay">
       <div class="success-popup-content">
-        <span class="close-btn" id="closePopup">&times;</span>
-        <p>Данные успешно отправлены. Спасибо)</p>
+        <span class="close-success-btn" id="closeSuccessPopup">&times;</span>
+        <p>Данные успешно отправлены, но вы все еще можете изменить свое решение)</p>
       </div>
   </div>
 </div>
@@ -312,16 +315,29 @@ export default {
 
     observer.observe(box);
 
-    const closePopupButton = document.getElementById('closePopup');
-    const popupOverlay = document.getElementById('popupOverlay');
+    const closeErrorPopupButton = document.getElementById('closeErrorPopup');
+    const errorPopupOverlay = document.getElementById('errorPopupOverlay');
 
-    closePopupButton.addEventListener('click', function() {
-        popupOverlay.classList.remove('error');
+    closeErrorPopupButton.addEventListener('click', function() {
+      errorPopupOverlay.classList.remove('error');
     });
 
-    popupOverlay.addEventListener('click', function(e) {
-        if (e.target === popupOverlay) {
-            popupOverlay.classList.remove('error');
+    errorPopupOverlay.addEventListener('click', function(e) {
+        if (e.target === errorPopupOverlay) {
+          errorPopupOverlay.classList.remove('error');
+        }
+    });
+
+    const closeSuccessPopupButton = document.getElementById('closeSuccessPopup');
+    const successPopupOverlay = document.getElementById('successPopupOverlay');
+
+    closeSuccessPopupButton.addEventListener('click', function() {
+      successPopupOverlay.classList.remove('success');
+    });
+
+    successPopupOverlay.addEventListener('click', function(e) {
+        if (e.target === successPopupOverlay) {
+          successPopupOverlay.classList.remove('success');
         }
     });
 
@@ -350,20 +366,24 @@ export default {
     async confirm(){
       if (!this.check_status) {
         this.errors.push('Пожалуйста, заполните форму');
-        const dialog = document.querySelector('.popup');
-        dialog.classList.add('error');
+        const errorDialog = document.querySelector('.error-popup');
+        errorDialog.classList.add('error');
       }
       else {
         const data = {guets: this.guest, status: this.check_status}
         console.log(data);
         console.log(import.meta.env.VITE_API_URL);
-        const response = await fetch(`${import.meta.env.VITE_API_URL}`, {
-          method: "POST",
-          headers: {
-          "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data)
-        });
+        const errorDialog = document.querySelector('.success-popup');
+        errorDialog.classList.add('success');
+        // const response = await fetch(`${import.meta.env.VITE_API_URL}`, {
+        //   method: "POST",
+        //   headers: {
+        //   "Content-Type": "application/json",
+        //   },
+        //   body: JSON.stringify(data)
+        // });
+        const successDialog = document.querySelector('.success-popup');
+        successDialog.classList.add('error');
       }
     },
 
