@@ -180,14 +180,39 @@ const router = createRouter({
       component: () => import('../views/JuliaOdaView.vue')
     },
     {
-      path: '/dorogaya-babulya',
-      name: 'dorogaya-babulya',
+      path: '/dorogaya-babulya-natasha',
+      name: 'dorogaya-babulya-natasha',
       component: () => import('../views/NatalyaView.vue')
     },
     {
       path: '/dorogaya-baba-malya',
       name: 'dorogaya-baba-malya',
       component: () => import('../views/MalyaView.vue')
+    },
+    {
+      path: '/dorogoy-sergey',
+      name: 'dorogoy-sergey',
+      component: () => import('../views/SergeyView.vue')
+    },
+    {
+      path: '/dorogoy-nikita',
+      name: 'dorogoy-nikita',
+      component: () => import('../views/NikitaView.vue')
+    },
+    {
+      path: '/dorogaya-nastya',
+      name: 'dorogaya-nastya',
+      component: () => import('../views/NastyaView.vue')
+    },
+    {
+      path: '/dorogoy-rodion',
+      name: 'dorogoy-rodion',
+      component: () => import('../views/RodionView.vue')
+    },
+    {
+      path: '/evgenia-and-husband',
+      name: 'evgenia-and-husband',
+      component: () => import('../views/EvgeniaAndHusbandView.vue')
     },
   ],
 })
