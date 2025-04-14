@@ -179,6 +179,16 @@ const router = createRouter({
       name: 'dorogaya-julia',
       component: () => import('../views/JuliaOdaView.vue')
     },
+    {
+      path: '/dorogaya-babulya',
+      name: 'dorogaya-babulya',
+      component: () => import('../views/NatalyaView.vue')
+    },
+    {
+      path: '/dorogaya-baba-malya',
+      name: 'dorogaya-baba-malya',
+      component: () => import('../views/MalyaView.vue')
+    },
   ],
 })
 
