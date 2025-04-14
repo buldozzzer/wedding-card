@@ -134,6 +134,11 @@ const router = createRouter({
       name: 'anton-and-anna',
       component: () => import('../views/AntonAndAnnaView.vue')
     },
+    {
+      path: '/taras-and-anna',
+      name: 'taras-and-anna',
+      component: () => import('../views/TarasAndAnnaView.vue')
+    },
   ],
 })
 
