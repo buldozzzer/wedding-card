@@ -162,17 +162,17 @@
             Анкета гостя
           </div>
           <div class="guest-form">
-            <p>Подтвердите свое присутствие</p>
+            <p>Сможете ли вы присутствовать?</p>
             <form class="form" onsubmit="return false">
               <label class="rad-label">
                 <input type="radio" class="rad-input" name="rad" value="Да" v-model="check_status">
                 <div class="rad-design"></div>
-                <div class="rad-text">Я приду</div>
+                <div class="rad-text">Да, с удовольствием</div>
               </label>
               <label class="rad-label">
                 <input type="radio" class="rad-input" name="rad" value="Нет" v-model="check_status">
                 <div class="rad-design"></div>
-                <div class="rad-text">Я не приду</div>
+                <div class="rad-text">Нет, к сожалению</div>
               </label>
               <button class="button" @click="confirm">Подтвердить</button>
             </form>
