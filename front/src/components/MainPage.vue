@@ -140,7 +140,7 @@
               </div>
             </div>
             <div class="wish icon">
-              <p><img src="../assets/not_good.svg" alt="плохо"></p>
+              <p><img src="../assets/exclamation.svg" alt="не очень хорошо"></p>
             </div>
             <div class="wish">
               <div class="child">
