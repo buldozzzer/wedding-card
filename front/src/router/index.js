@@ -210,9 +210,14 @@ const router = createRouter({
       component: () => import('../views/RodionView.vue')
     },
     {
-      path: '/evgenia-and-husband',
-      name: 'evgenia-and-husband',
-      component: () => import('../views/EvgeniaAndHusbandView.vue')
+      path: '/evgeniy-and-evgenia',
+      name: 'evgeniy-and-evgenia',
+      component: () => import('../views/EvgeniyAndEvgeniaView.vue')
+    },
+    {
+      path: '/vladimir-and-larisa',
+      name: 'vladimir-and-larisa',
+      component: () => import('../views/VladimirAndLarisaView.vue')
     },
   ],
 })

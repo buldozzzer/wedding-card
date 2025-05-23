@@ -1,5 +1,5 @@
 <template>
-  <MainPageVue guest="Дорогие Женя и ..."></MainPageVue>
+  <MainPageVue guest="Дорогие Евгений и Евгения"></MainPageVue>
 </template>
 
 <script setup>
