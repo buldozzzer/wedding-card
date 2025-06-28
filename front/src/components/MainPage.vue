@@ -178,7 +178,7 @@
             </form>
           </div>
           <div class="greating-transparent">
-            Пожалуйста, уточните сведения<br><b>до 1 июня</b>
+            Пожалуйста, уточните сведения<br><b>до 15 июля</b>
           </div>
           <div class="greating">
             Контакты
